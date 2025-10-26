@@ -62,7 +62,7 @@ async function sendVoteToBackend(vote) {
     deepfakeButton.disabled = true;
     
     try {
-        const response = await fetch('http://localhost:3000/api/tag', {
+            const response = await fetch('https://caid-backend.onrender.com/api/tag',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
