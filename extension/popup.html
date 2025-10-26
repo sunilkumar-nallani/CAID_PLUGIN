@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">          <!-- visual structure of extension (UI)  -->
+<head>
+    <meta charset="UTF-8">
+    <title>CAID Plugin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card">
+        <header class="header">
+            <img src="images/Lcaid.png" alt="CAID Logo" class="logo">
+            <div class="header-text">
+                <div class="title">CAID Verifier</div>
+                <div class="subtitle">Tag an image as Real or Synthetic</div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div id="image-preview" class="image-preview">
+                <div id="empty-state" class="empty-state">
+                    <span class="icon">📷</span>
+                    <span>No image selected</span>
+                    <small>Right-click an image to begin</small>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="btn-real" class="btn btn-real" disabled>
+                    <span>✔️</span> Tag as Real
+                </button>
+                <button id="btn-deepfake" class="btn btn-deepfake" disabled>
+                    <span>❌</span> Tag as Synthetic
+                </button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div id="status" class="status-message">
+                Waiting for image...
+            </div>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

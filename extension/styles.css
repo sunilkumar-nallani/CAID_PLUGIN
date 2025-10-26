@@ -1,0 +1,166 @@
+/* --- Global Styles & Modern Color Palette --- */
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --primary-text: #212529;
+    --secondary-text: #6c757d;
+    --border-color: #e9ecef;
+    --accent-blue: #007bff;
+    --success-green: #198754;
+    --danger-red: #dc3545;
+    --font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background-color: var(--bg-color);
+    font-family: var(--font-family);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px_12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    /* --- NEW: Smooth fade-in animation on open --- */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* --- NEW: Keyframe animation for the fade-in effect --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* --- Header --- */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+}
+.header-text .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+.header-text .subtitle {
+    font-size: 12px;
+    color: var(--secondary-text);
+}
+
+/* --- Main Content --- */
+.main-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* --- Image Preview --- */
+.image-preview {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    /* --- NEW: Animated Gradient Background --- */
+    background: linear-gradient(135deg, #f1f3f5, #e9ecef, #f8f9fa, #e9ecef);
+    background-size: 400% 400%;
+    animation: gradient-shimmer 10s ease infinite;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--border-color);
+    transition: background-image 0.3s ease;
+}
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+.empty-state .icon { font-size: 24px; }
+.empty-state small { font-size: 11px; }
+
+/* --- NEW: Keyframe animation for the background shimmer --- */
+@keyframes gradient-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* --- Buttons --- */
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600; /* Bolder font */
+    border-radius: 8px;
+    border: 1px solid transparent; /* Start with transparent border */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; /* Transition all properties */
+}
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+.btn span:first-child { 
+    line-height: 1;
+    transition: transform 0.2s ease-in-out; /* Animate the icon */
+}
+
+.btn-real {
+    background-color: #e6f9f0;
+    color: var(--success-green);
+}
+.btn-deepfake {
+    background-color: #fdeaea;
+    color: var(--danger-red);
+}
+
+/* --- ENHANCED: Button Hover & Active Effects --- */
+.btn:not(:disabled):hover {
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+.btn:not(:disabled):hover span:first-child {
+    transform: scale(1.2); /* Make the icon slightly bigger on hover */
+}
+.btn:not(:disabled):active {
+    transform: translateY(0px) scale(0.98); /* Press down effect */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+/* --- Footer & Status --- */
+.footer {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border-color);
+    background-color: #f8f9fa;
+}
+.status-message {
+    font-size: 12px;
+    text-align: center;
+    color: var(--secondary-text);
+}
