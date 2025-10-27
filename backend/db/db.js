@@ -1,4 +1,3 @@
-// D:\caid-plugin\backend\db\db.js
 const { Pool } = require('pg');
 
 // Get the connection string directly from Render's environment variable

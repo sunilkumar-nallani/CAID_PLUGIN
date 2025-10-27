@@ -1,1 +1,4 @@
 .env
+
+
+PGPASSWORD=wGOszwYMqUKly15THsZhvMzfr0IkI6so psql -h dpg-d3v26seuk2gs73e8bvn0-a.oregon-postgres.render.com -U caid_db_user caid_db
